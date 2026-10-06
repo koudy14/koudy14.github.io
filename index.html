@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Matěj Kuděla – portfolio</title>
+  <meta name="description" content="Portfolio studenta IT Matěje Kuděly – projekty v Pythonu, HTML a CSS.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="logo" href="#top">MK</a>
+    <nav aria-label="Hlavní navigace">
+      <ul>
+        <li><a href="#o-mne">O mně</a></li>
+        <li><a href="#dovednosti">Dovednosti</a></li>
+        <li><a href="#projekty">Projekty</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <section class="hero">
+      <p class="hero-intro">Ahoj, jsem</p>
+      <h1>Matěj Kuděla</h1>
+      <p class="hero-sub">Student IT, který se učí programovat a vyvíjet aplikace.</p>
+      <div class="hero-links">
+        <a class="btn btn-primary" href="#projekty"><i class="fa-solid fa-folder-open" aria-hidden="true"></i> Moje projekty</a>
+        <a class="btn" href="https://github.com/koudy14"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
+      </div>
+    </section>
+
+    <section id="o-mne" class="section">
+      <h2>O mně</h2>
+      <p>
+        Studuji obor zaměřený na programování a vývoj aplikací. Ve škole se věnuji
+        objektově orientovanému programování, Pythonu a správě sítí ve Windows.
+        Své práce ukládám na GitHub a postupně se učím pracovat s verzovacími systémy.
+      </p>
+    </section>
+
+    <section id="dovednosti" class="section">
+      <h2>Dovednosti</h2>
+      <ul class="skills">
+        <li><i class="fa-brands fa-python" aria-hidden="true"></i> Python</li>
+        <li><i class="fa-solid fa-cubes" aria-hidden="true"></i> OOP</li>
+        <li><i class="fa-brands fa-html5" aria-hidden="true"></i> HTML</li>
+        <li><i class="fa-brands fa-css3-alt" aria-hidden="true"></i> CSS</li>
+        <li><i class="fa-brands fa-git-alt" aria-hidden="true"></i> Git a GitHub</li>
+        <li><i class="fa-brands fa-windows" aria-hidden="true"></i> Windows – sítě a správa</li>
+      </ul>
+    </section>
+
+    <section id="projekty" class="section">
+      <h2>Projekty</h2>
+      <div class="projects">
+
+        <article class="project">
+          <i class="fa-brands fa-python project-icon" aria-hidden="true"></i>
+          <h3>muj_prvni_projekt</h3>
+          <p>Ukázka práce se systémem pro správu verzí (SCM).</p>
+          <p class="tech">Python</p>
+          <a href="https://github.com/koudy14/muj_prvni_projekt">Zobrazit na GitHubu <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+        </article>
+
+        <article class="project">
+          <i class="fa-solid fa-mountain project-icon" aria-hidden="true"></i>
+          <h3>Sedlo</h3>
+          <p>Webová stránka o Sedle Syrském.</p>
+          <p class="tech">HTML</p>
+          <a href="https://github.com/koudy14/Sedlo">Zobrazit na GitHubu <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+        </article>
+
+        <article class="project">
+          <i class="fa-solid fa-earth-asia project-icon" aria-hidden="true"></i>
+          <h3>Severní Korea</h3>
+          <p>Školní webová stránka o Severní Koreji.</p>
+          <p class="tech">HTML</p>
+          <a href="https://github.com/koudy14/Severni-Korea">Zobrazit na GitHubu <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+        </article>
+
+        <article class="project">
+          <i class="fa-solid fa-id-card project-icon" aria-hidden="true"></i>
+          <h3>koudy14.github.io</h3>
+          <p>Moje osobní stránka hostovaná na GitHub Pages.</p>
+          <p class="tech">HTML</p>
+          <a href="https://github.com/koudy14/koudy14.github.io">Zobrazit na GitHubu <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="kontakt" class="section">
+      <h2>Kontakt</h2>
+      <p>Mé práce a kód najdeš na GitHubu.</p>
+      <a class="btn btn-primary" href="https://github.com/koudy14"><i class="fa-brands fa-github" aria-hidden="true"></i> github.com/koudy14</a>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Matěj Kuděla</p>
+  </footer>
+
+</body>
+</html>
