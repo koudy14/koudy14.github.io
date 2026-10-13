@@ -1,274 +1,161 @@
-:root {
-  --bg: #f2f5fa;
-  --surface: #ffffff;
-  --ink: #111a2e;
-  --muted: #4f5b73;
-  --accent: #2748d8;
-  --accent-dark: #1b34a6;
-  --line: #d6dded;
-  --radius: 10px;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 4.5rem;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-}
-
 body {
+  background-color: #1e2a38;
+  color: #f2f2f2;
+  font-family: "Poppins", Arial, sans-serif;
   margin: 0;
-  background: var(--bg);
-  color: var(--ink);
-  font-family: "IBM Plex Sans", system-ui, sans-serif;
-  font-size: 1.05rem;
-  line-height: 1.65;
+  padding: 0;
+  line-height: 1.6;
 }
 
-h1,
-h2,
-h3 {
-  font-family: "Bricolage Grotesque", system-ui, sans-serif;
-  line-height: 1.1;
+/* ===== záhlaví ===== */
+header {
+  background-color: #12202e;
+  text-align: center;
+  padding: 30px 20px 15px 20px;
+  border-bottom: 4px solid #f5a623;
+}
+
+header h1 {
   margin: 0;
+  font-size: 3em;
+  color: #f5a623;
+}
+
+header p {
+  margin: 5px 0 20px 0;
+  color: #cfd8e3;
+}
+
+/* ===== menu ===== */
+nav a {
+  display: inline-block;
+  color: #ffffff;
+  background-color: #2d4257;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 4px;
+  border-radius: 20px;
+}
+
+nav a:hover {
+  background-color: #f5a623;
+  color: #12202e;
+}
+
+/* ===== hlavní obsah ===== */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+h2 {
+  color: #f5a623;
+  font-size: 2em;
+  border-bottom: 2px solid #2d4257;
+  padding-bottom: 8px;
+}
+
+h3 {
+  color: #ffd27a;
+  margin: 10px 0 5px 0;
+}
+
+ul {
+  padding-left: 25px;
+}
+
+li {
+  margin-bottom: 4px;
 }
 
 a {
-  color: var(--accent);
+  color: #7fc4ff;
 }
 
-a:focus-visible {
-  outline: 3px solid var(--accent);
-  outline-offset: 3px;
-  border-radius: 4px;
+a:hover {
+  color: #f5a623;
 }
 
-/* ---------- Header ---------- */
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0.9rem 1.5rem;
-  background: var(--bg);
-  border-bottom: 1px solid var(--line);
-}
-
-.logo {
-  font-family: "Bricolage Grotesque", system-ui, sans-serif;
-  font-weight: 800;
-  font-size: 1.4rem;
-  color: var(--ink);
-  text-decoration: none;
-}
-
-.site-header ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.25rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.site-header nav a {
-  color: var(--muted);
-  font-weight: 500;
-  text-decoration: none;
-}
-
-.site-header nav a:hover {
-  color: var(--accent);
-}
-
-/* ---------- Layout ---------- */
-main {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
-.section {
-  padding: 3.5rem 0;
-  border-top: 1px solid var(--line);
-}
-
-.section h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 1.25rem;
-}
-
-.section p {
-  max-width: 62ch;
-  margin: 0 0 1.25rem;
-}
-
-/* ---------- Hero ---------- */
-.hero {
-  padding: 5rem 0 4rem;
-}
-
-.hero-intro {
-  margin: 0 0 0.5rem;
-  color: var(--muted);
-  font-size: 1.25rem;
-}
-
-.hero h1 {
-  font-size: clamp(3rem, 11vw, 6.5rem);
-  font-weight: 800;
-  letter-spacing: -0.03em;
-}
-
-.hero-sub {
-  max-width: 34ch;
-  margin: 1.25rem 0 2rem;
-  font-size: 1.3rem;
-}
-
-.hero-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-/* ---------- Buttons ---------- */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 0.7rem 1.3rem;
-  border: 2px solid var(--ink);
-  border-radius: var(--radius);
-  color: var(--ink);
-  font-weight: 500;
-  text-decoration: none;
-  transition: background 0.2s, color 0.2s;
-}
-
-.btn:hover {
-  background: var(--ink);
-  color: #fff;
-}
-
-.btn-primary {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #fff;
-}
-
-.btn-primary:hover {
-  background: var(--accent-dark);
-  border-color: var(--accent-dark);
-}
-
-/* ---------- Skills ---------- */
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.skills li {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 0.6rem 1.1rem;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  font-weight: 500;
-}
-
-.skills i {
-  color: var(--accent);
-  font-size: 1.15rem;
-}
-
-/* ---------- Projects ---------- */
-.projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.25rem;
-}
-
-.project {
-  display: flex;
-  flex-direction: column;
-  padding: 1.5rem;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-}
-
-.project-icon {
-  margin-bottom: 1rem;
-  color: var(--accent);
-  font-size: 1.8rem;
-}
-
-.project h3 {
-  margin-bottom: 0.5rem;
-  font-size: 1.3rem;
-  font-weight: 700;
-}
-
-.project p {
-  margin: 0 0 0.75rem;
-}
-
-.project .tech {
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-.project a {
-  margin-top: auto;
-  font-weight: 500;
-}
-
-/* ---------- Footer ---------- */
-.site-footer {
-  padding: 2rem 1.5rem;
-  border-top: 1px solid var(--line);
-  color: var(--muted);
+/* ===== karty druhů ===== */
+article {
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  width: 31%;
+  margin: 1%;
+  padding: 15px;
+  background-color: #2d4257;
+  border-radius: 15px;
   text-align: center;
 }
 
-.site-footer p {
-  margin: 0;
+article:hover {
+  background-color: #38526b;
 }
 
-/* ---------- Mobile ---------- */
-@media (max-width: 600px) {
-  .site-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.4rem;
+article img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+article p {
+  margin: 0;
+  font-size: 0.95em;
+}
+
+/* ===== fotky ===== */
+#fotky {
+  text-align: center;
+}
+
+#fotky img {
+  max-width: 45%;
+  border-radius: 15px;
+  margin: 8px;
+}
+
+/* ===== zápatí ===== */
+footer {
+  background-color: #12202e;
+  text-align: center;
+  padding: 20px;
+  border-top: 4px solid #f5a623;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+/* ===== responzivita ===== */
+@media (max-width: 800px) {
+  article {
+    width: 48%;
+  }
+}
+
+@media (max-width: 500px) {
+  header h1 {
+    font-size: 2.2em;
   }
 
-  .hero {
-    padding: 3rem 0 2.5rem;
+  nav a {
+    display: block;
+    margin: 6px 20px;
   }
 
-  .section {
-    padding: 2.5rem 0;
+  article {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  #fotky img {
+    max-width: 100%;
   }
 }
