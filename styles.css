@@ -27,6 +27,16 @@ header p {
 }
 
 /* ===== menu ===== */
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 nav a {
   display: inline-block;
   color: #ffffff;
@@ -143,11 +153,6 @@ footer p {
 @media (max-width: 500px) {
   header h1 {
     font-size: 2.2em;
-  }
-
-  nav a {
-    display: block;
-    margin: 6px 20px;
   }
 
   article {
