@@ -126,7 +126,9 @@ article p {
 }
 
 #fotky img {
-  max-width: 45%;
+  width: min(calc(100% - 16px), 420px);
+  height: 280px;
+  object-fit: cover;
   border-radius: 15px;
   margin: 8px;
 }
@@ -158,9 +160,5 @@ footer p {
   article {
     width: 100%;
     margin: 10px 0;
-  }
-
-  #fotky img {
-    max-width: 100%;
   }
 }
