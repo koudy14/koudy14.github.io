@@ -1,164 +1,412 @@
-body {
+.sedlo-page,
+.portfolio-page {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 320px;
+}
+
+.sedlo-page *,
+.sedlo-page *::before,
+.sedlo-page *::after,
+.portfolio-page *,
+.portfolio-page *::before,
+.portfolio-page *::after {
+  box-sizing: inherit;
+}
+
+.sedlo-page {
   background-color: #1e2a38;
   color: #f2f2f2;
   font-family: "Poppins", Arial, sans-serif;
-  margin: 0;
-  padding: 0;
   line-height: 1.6;
 }
 
-/* ===== záhlaví ===== */
-header {
+.sedlo-page header {
   background-color: #12202e;
-  text-align: center;
-  padding: 30px 20px 15px 20px;
   border-bottom: 4px solid #f5a623;
+  padding: 30px 20px 15px;
+  text-align: center;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 3em;
+.sedlo-page header h1 {
   color: #f5a623;
+  font-size: clamp(2.2rem, 6vw, 3rem);
+  margin: 0;
 }
 
-header p {
-  margin: 5px 0 20px 0;
+.sedlo-page header p {
   color: #cfd8e3;
+  margin: 5px 0 20px;
 }
 
-/* ===== menu ===== */
-nav ul {
+.sedlo-page nav {
   display: flex;
   flex-wrap: wrap;
+  gap: 8px;
   justify-content: center;
-  gap: 4px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
 }
 
-nav a {
-  display: inline-block;
-  color: #ffffff;
+.sedlo-page nav a {
   background-color: #2d4257;
-  text-decoration: none;
-  padding: 10px 20px;
-  margin: 4px;
   border-radius: 20px;
+  color: #fff;
+  display: inline-block;
+  padding: 8px 18px;
+  text-decoration: none;
 }
 
-nav a:hover {
+.sedlo-page nav a:hover {
   background-color: #f5a623;
   color: #12202e;
 }
 
-/* ===== hlavní obsah ===== */
-main {
-  max-width: 1000px;
+.sedlo-page main {
   margin: 0 auto;
+  max-width: 1040px;
   padding: 20px;
 }
 
-section {
+.sedlo-page section {
   margin-bottom: 40px;
 }
 
-h2 {
-  color: #f5a623;
-  font-size: 2em;
+.sedlo-page #druhy {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+}
+
+.sedlo-page h2 {
   border-bottom: 2px solid #2d4257;
+  color: #f5a623;
+  font-size: clamp(1.6rem, 4vw, 2rem);
   padding-bottom: 8px;
 }
 
-h3 {
+.sedlo-page h3 {
   color: #ffd27a;
-  margin: 10px 0 5px 0;
+  margin: 10px 0 5px;
 }
 
-ul {
+.sedlo-page ul {
   padding-left: 25px;
 }
 
-li {
+.sedlo-page li {
   margin-bottom: 4px;
 }
 
-a {
+.sedlo-page a {
   color: #7fc4ff;
 }
 
-a:hover {
+.sedlo-page a:hover {
   color: #f5a623;
 }
 
-/* ===== karty druhů ===== */
-article {
-  display: inline-block;
-  vertical-align: top;
-  box-sizing: border-box;
-  width: 31%;
-  margin: 1%;
-  padding: 15px;
+.sedlo-page article {
   background-color: #2d4257;
   border-radius: 15px;
+  min-width: 0;
+  padding: 15px;
   text-align: center;
 }
 
-article:hover {
+.sedlo-page article:hover {
   background-color: #38526b;
 }
 
-article img {
-  width: 100%;
+.sedlo-page article img {
+  border-radius: 12px;
   height: 220px;
   object-fit: cover;
-  border-radius: 12px;
+  width: 100%;
 }
 
-article p {
-  margin: 0;
+.sedlo-page article p {
   font-size: 0.95em;
+  margin: 0;
 }
 
-/* ===== fotky ===== */
-#fotky {
+.sedlo-page #fotky {
   text-align: center;
 }
 
-#fotky img {
-  width: min(calc(100% - 16px), 420px);
-  height: 280px;
-  object-fit: cover;
+.sedlo-page #fotky img {
   border-radius: 15px;
+  height: 280px;
   margin: 8px;
+  max-width: calc(100% - 16px);
+  object-fit: cover;
+  width: 420px;
 }
 
-/* ===== zápatí ===== */
-footer {
+.sedlo-page footer {
   background-color: #12202e;
-  text-align: center;
-  padding: 20px;
   border-top: 4px solid #f5a623;
+  padding: 20px;
+  text-align: center;
 }
 
-footer p {
+.sedlo-page footer p {
   margin: 5px 0;
 }
 
-/* ===== responzivita ===== */
-@media (max-width: 800px) {
-  article {
-    width: 48%;
-  }
+.portfolio-page {
+  background: #101827;
+  color: #e8edf5;
+  font-family: "IBM Plex Sans", Arial, sans-serif;
+  line-height: 1.6;
 }
 
-@media (max-width: 500px) {
-  header h1 {
-    font-size: 2.2em;
+.portfolio-page a {
+  color: inherit;
+}
+
+.portfolio-page .site-header {
+  align-items: center;
+  background: #101827;
+  border-bottom: 1px solid #293549;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px max(24px, calc((100% - 1120px) / 2));
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.portfolio-page .logo {
+  color: #f5a623;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.portfolio-page nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.portfolio-page nav a {
+  color: #d3dbea;
+  display: inline-block;
+  padding: 8px 4px;
+  text-decoration: none;
+}
+
+.portfolio-page nav a:hover,
+.portfolio-page .projects a:hover {
+  color: #ffbf52;
+}
+
+.portfolio-page main {
+  margin: 0 auto;
+  max-width: 1120px;
+  padding: 24px;
+}
+
+.portfolio-page .hero {
+  padding: clamp(56px, 12vw, 120px) 0 80px;
+}
+
+.portfolio-page .hero-intro {
+  color: #ffbf52;
+  font-weight: 500;
+  margin: 0 0 8px;
+}
+
+.portfolio-page .hero h1 {
+  color: #f7f8fb;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: clamp(2.8rem, 9vw, 5.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  margin: 0;
+}
+
+.portfolio-page .hero-sub {
+  color: #b7c2d3;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  margin: 18px 0 28px;
+  max-width: 600px;
+}
+
+.portfolio-page .hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.portfolio-page .btn {
+  border: 1px solid #47556b;
+  border-radius: 8px;
+  color: #f7f8fb;
+  display: inline-block;
+  padding: 11px 16px;
+  text-decoration: none;
+}
+
+.portfolio-page .btn:hover {
+  border-color: #ffbf52;
+  color: #ffbf52;
+}
+
+.portfolio-page .btn-primary {
+  background: #f5a623;
+  border-color: #f5a623;
+  color: #101827;
+  font-weight: 500;
+}
+
+.portfolio-page .btn-primary:hover {
+  background: #ffbf52;
+  color: #101827;
+}
+
+.portfolio-page .section {
+  margin-bottom: 72px;
+  scroll-margin-top: 88px;
+}
+
+.portfolio-page .section h2 {
+  border-bottom: 1px solid #293549;
+  color: #f7f8fb;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: clamp(1.7rem, 4vw, 2.2rem);
+  margin: 0 0 20px;
+  padding-bottom: 10px;
+}
+
+.portfolio-page .section > p {
+  color: #b7c2d3;
+  max-width: 760px;
+}
+
+.portfolio-page .skills {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.portfolio-page .skills li {
+  background: #192437;
+  border: 1px solid #293549;
+  border-radius: 8px;
+  margin: 0;
+  padding: 14px;
+}
+
+.portfolio-page .skills i,
+.portfolio-page .project-icon {
+  color: #ffbf52;
+}
+
+.portfolio-page .projects {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 235px), 1fr));
+}
+
+.portfolio-page .project {
+  background: #192437;
+  border: 1px solid #293549;
+  border-radius: 10px;
+  margin: 0;
+  min-width: 0;
+  padding: 20px;
+  text-align: left;
+}
+
+.portfolio-page .project:hover {
+  background: #202e44;
+}
+
+.portfolio-page .project-icon {
+  font-size: 1.4rem;
+}
+
+.portfolio-page .project h3 {
+  color: #f7f8fb;
+  overflow-wrap: anywhere;
+}
+
+.portfolio-page .project p {
+  color: #b7c2d3;
+}
+
+.portfolio-page .project .tech {
+  color: #ffbf52;
+  font-size: 0.9rem;
+}
+
+.portfolio-page .project a {
+  color: #ffbf52;
+  text-decoration: none;
+}
+
+.portfolio-page .site-footer {
+  background: #0c121e;
+  border-top: 1px solid #293549;
+  color: #b7c2d3;
+  padding: 24px;
+  text-align: center;
+}
+
+.portfolio-page .site-footer img {
+  height: 31px;
+  margin: 4px;
+  max-width: 100%;
+  width: 88px;
+}
+
+.portfolio-page .site-footer p {
+  margin: 8px 0 0;
+}
+
+@media (max-width: 600px) {
+  .sedlo-page main {
+    padding: 16px;
   }
 
-  article {
-    width: 100%;
-    margin: 10px 0;
+  .sedlo-page header {
+    padding: 24px 16px 14px;
+  }
+
+  .portfolio-page .site-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px 16px;
+  }
+
+  .portfolio-page nav ul {
+    gap: 2px 12px;
+  }
+
+  .portfolio-page nav a {
+    font-size: 0.92rem;
+    padding: 6px 0;
+  }
+
+  .portfolio-page main {
+    padding: 16px;
+  }
+
+  .portfolio-page .hero {
+    padding: 64px 0;
+  }
+
+  .portfolio-page .section {
+    margin-bottom: 56px;
+    scroll-margin-top: 100px;
   }
 }
