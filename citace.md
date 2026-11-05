@@ -70,3 +70,10 @@
    **Výsledek:** Styly Sedláčkova webu odděleny do `style.css`, do záhlaví přidáno upozornění, do patičky odkaz na tuto citaci a JavaScript omezen na prohlížení obrázků, které vyžaduje navigaci mezi nimi. Video používá nativní ovládání prohlížeče.
 
 **Výstup AI:** Úpravy HTML, CSS a JavaScriptu v projektu; výsledné soubory jsou `Sedlo.html`, `style.css` a `media-viewer.js`.
+
+8. **Prompt:** „u toho videa nechci ty cerne pruhy“
+   **Výsledek:** Původní pokus s ořezem obraz přiblížil, proto byl odstraněn. Video používá své přirozené rozměry bez ořezu či přiblížení.
+9. **Prompt:** „samozrejme chci aby ten kod byl co nejjednodussi“
+   **Výsledek:** Styl videa zjednodušen na zaoblené rohy a maximální šířku.
+10. **Prompt:** „to video je na hovno je to priblizeny ja jsem jenom rekl ze tam nechcu ty cerne pasy“
+    **Výsledek:** Odstraněno vynucení poměru 16:9 a ořezávání. Video se zobrazí celé bez přiblížení; případné černé okraje, které jsou přímo součástí souboru, vyžadují úpravu samotného videa.
