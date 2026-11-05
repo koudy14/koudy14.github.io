@@ -1,97 +1,75 @@
+const galleryImages = [...document.querySelectorAll("main img")];
 const mediaViewer = document.createElement("dialog");
-mediaViewer.className = "media-viewer";
-mediaViewer.setAttribute("aria-label", "Zvětšený obrázek nebo video");
-
 const mediaViewerContent = document.createElement("div");
+const mediaViewerPrevious = document.createElement("button");
+const mediaViewerNext = document.createElement("button");
+
+mediaViewer.className = "media-viewer";
+mediaViewer.setAttribute("aria-label", "Zvětšený obrázek");
 mediaViewerContent.className = "media-viewer__content";
 
-const mediaViewerClose = document.createElement("button");
-mediaViewerClose.className = "media-viewer__close";
-mediaViewerClose.type = "button";
-mediaViewerClose.setAttribute("aria-label", "Zavřít zvětšený obsah");
-mediaViewerClose.textContent = "×";
+mediaViewerPrevious.className = "media-viewer__navigation media-viewer__previous";
+mediaViewerPrevious.type = "button";
+mediaViewerPrevious.setAttribute("aria-label", "Předchozí obrázek");
+mediaViewerPrevious.textContent = "‹";
 
-mediaViewer.append(mediaViewerClose, mediaViewerContent);
+mediaViewerNext.className = "media-viewer__navigation media-viewer__next";
+mediaViewerNext.type = "button";
+mediaViewerNext.setAttribute("aria-label", "Další obrázek");
+mediaViewerNext.textContent = "›";
+
+mediaViewer.append(mediaViewerPrevious, mediaViewerContent, mediaViewerNext);
 document.body.append(mediaViewer);
 
-let activeMedia;
-let originalMediaWasPlaying = false;
+let activeImage;
+let activeImageIndex = 0;
 
-function closeMediaViewer() {
-  mediaViewer.close();
+function showImage(index) {
+  activeImageIndex = (index + galleryImages.length) % galleryImages.length;
+  activeImage = galleryImages[activeImageIndex];
+  mediaViewerContent.replaceChildren(activeImage.cloneNode(true));
 }
 
-function openMediaViewer(media) {
-  activeMedia = media;
-  const enlargedMedia = media.cloneNode(true);
-  enlargedMedia.removeAttribute("id");
-
-  if (media instanceof HTMLImageElement) {
-    enlargedMedia.alt = media.alt;
-  } else {
-    originalMediaWasPlaying = !media.paused && !media.ended;
-    media.pause();
-    enlargedMedia.controls = true;
-    enlargedMedia.addEventListener("loadedmetadata", () => {
-      enlargedMedia.currentTime = media.currentTime;
-      if (originalMediaWasPlaying) {
-        enlargedMedia.play();
-      }
-    }, { once: true });
-  }
-
-  mediaViewerContent.replaceChildren(enlargedMedia);
-  mediaViewer.showModal();
-  mediaViewerClose.focus();
-}
-
-document.querySelectorAll("main img").forEach((image) => {
+galleryImages.forEach((image) => {
   image.tabIndex = 0;
   image.setAttribute("role", "button");
   image.setAttribute("aria-label", `Zvětšit obrázek: ${image.alt || "obrázek"}`);
 });
 
 document.addEventListener("click", (event) => {
-  const media = event.target.closest("main img, main video");
-  if (!media) {
+  const image = event.target.closest("main img");
+  if (!image) {
     return;
   }
 
   event.preventDefault();
-  openMediaViewer(media);
+  showImage(galleryImages.indexOf(image));
+  mediaViewer.showModal();
+  mediaViewerPrevious.focus();
 });
 
 document.addEventListener("keydown", (event) => {
-  if (event.target instanceof HTMLImageElement && event.target.matches("main img")
+  if (mediaViewer.open && event.key === "ArrowLeft") {
+    event.preventDefault();
+    showImage(activeImageIndex - 1);
+  } else if (mediaViewer.open && event.key === "ArrowRight") {
+    event.preventDefault();
+    showImage(activeImageIndex + 1);
+  } else if (event.target instanceof HTMLImageElement && event.target.matches("main img")
     && (event.key === "Enter" || event.key === " ")) {
     event.preventDefault();
-    openMediaViewer(event.target);
+    event.target.click();
   }
 });
 
-mediaViewerClose.addEventListener("click", closeMediaViewer);
+mediaViewerPrevious.addEventListener("click", () => showImage(activeImageIndex - 1));
+mediaViewerNext.addEventListener("click", () => showImage(activeImageIndex + 1));
 mediaViewer.addEventListener("click", (event) => {
   if (event.target === mediaViewer) {
-    closeMediaViewer();
+    mediaViewer.close();
   }
 });
 mediaViewer.addEventListener("close", () => {
-  const enlargedMedia = mediaViewerContent.firstElementChild;
-  if (activeMedia instanceof HTMLVideoElement && enlargedMedia instanceof HTMLVideoElement) {
-    if (activeMedia.readyState > 0 && enlargedMedia.readyState > 0) {
-      activeMedia.currentTime = enlargedMedia.currentTime;
-    }
-
-    if (enlargedMedia.paused) {
-      activeMedia.pause();
-    } else {
-      activeMedia.play().catch((error) => {
-        console.error("Video se po zavření zvětšeného zobrazení nepodařilo obnovit.", error);
-      });
-    }
-  }
-
   mediaViewerContent.replaceChildren();
-  activeMedia?.focus();
-  activeMedia = null;
+  activeImage?.focus();
 });

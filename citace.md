@@ -47,3 +47,26 @@
 > a udelej i u toho index.html tu citaci
 
 **Výsledek:** Do `citace.md` byl přidán záznam o přidání validátorů na `index.html`.
+
+## 7. Úpravy školního projektu Sedláček
+
+**Použitý nástroj/model:** AI asistent s Copilot SDK ve VS Code. Přesný název podkladového modelu nebyl v této relaci zobrazen, proto jej nelze spolehlivě uvést.
+
+**Prompty a výsledky:**
+
+1. **Prompt:** „vzdycka kdyz kliknu na ten obrazek tak je to policko vetsi nez ten samotny obrazek a zabirato vic mista“
+   **Výsledek:** Upraveno zvětšené zobrazení obrázků tak, aby se okno přizpůsobilo obrázku.
+2. **Prompt:** „napis pak nekde pod nadpis a napis spatneni sedlacka ve volne prirode a dej tam to video“
+   **Výsledek:** Přidán nadpis a lokální video `MicrosoftTeams-video.mp4`.
+3. **Prompt:** „presne takhle akorat ten podnadpis i to video dej pod ty obrazky“
+   **Výsledek:** Sekce s videem přesunuta pod seznam druhů.
+4. **Prompt:** „a nad ty sedlacky dej podnadpis druhy sedlacku“
+   **Výsledek:** Nad seznam druhů přidán nadpis „Druhy sedláčků“.
+5. **Prompt:** „udelej at kdyz si nekdo klikne na ten obrazek tak at se muze presouvat z jednoho na druhy sipkama“
+   **Výsledek:** Přidána navigace mezi zvětšenými obrázky tlačítky i klávesami se šipkami.
+6. **Prompt:** „a kdyz nekdo klikne na ten obrazek tak at tam neni ten ramecek vubec a kdyz nekdo z toho chce odeji tak proste klikne vedle“
+   **Výsledek:** Odstraněn rámeček kolem zvětšeného obrázku; kliknutí mimo něj zobrazení zavře.
+7. **Prompt:** „POZOR! Chci ať školní projekty mají - soubor kaskádových stylů zvlášť (style.css) - ikony na validaci v zápatí webu - citaci AI (můžete použít i AI k vygenerování citace, chceme vědět použitý model, prompty, výstupy) - upozornění na "školní" web, v záhlaví webu (i když to může být narušení designu) může být nutno upozornění na školní či fiktivní web (z důvodu čoi) na vlastní stránku (většinou). - v této fázi minimum javascriptu; tohle napsal ucitel ze ten web musi splnovat tak se ujisti ze to tak je“
+   **Výsledek:** Styly Sedláčkova webu odděleny do `style.css`, do záhlaví přidáno upozornění, do patičky odkaz na tuto citaci a JavaScript omezen na prohlížení obrázků, které vyžaduje navigaci mezi nimi. Video používá nativní ovládání prohlížeče.
+
+**Výstup AI:** Úpravy HTML, CSS a JavaScriptu v projektu; výsledné soubory jsou `Sedlo.html`, `style.css` a `media-viewer.js`.
