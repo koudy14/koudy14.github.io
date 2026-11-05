@@ -76,6 +76,14 @@
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
 }
 
+.sedlo-page #pozorovani video {
+  background-color: #000;
+  border-radius: 12px;
+  max-height: 70vh;
+  max-width: 100%;
+  width: 720px;
+}
+
 .sedlo-page h2 {
   border-bottom: 2px solid #2d4257;
   color: #f5a623;
@@ -382,12 +390,12 @@ main video {
   border: 1px solid #47556b;
   border-radius: 12px;
   color: #f7f8fb;
-  height: min(92vh, 900px);
+  height: fit-content;
   max-height: 92vh;
-  max-width: 1200px;
+  max-width: 96vw;
   overflow: visible;
   padding: 48px 16px 16px;
-  width: 96vw;
+  width: fit-content;
 }
 
 .media-viewer::backdrop {
@@ -397,22 +405,17 @@ main video {
 .media-viewer__content {
   align-items: center;
   display: flex;
-  height: 100%;
   justify-content: center;
-  width: 100%;
+  max-height: calc(92vh - 66px);
+  max-width: calc(96vw - 34px);
 }
 
 .media-viewer__content img,
 .media-viewer__content video {
-  height: 100%;
-  max-height: 100%;
+  height: auto;
+  max-height: calc(92vh - 66px);
   max-width: 100%;
   object-fit: contain;
-  width: 100%;
-}
-
-.media-viewer__content img {
-  height: auto;
   width: auto;
 }
 
@@ -473,12 +476,5 @@ main video {
   .portfolio-page .section {
     margin-bottom: 56px;
     scroll-margin-top: 100px;
-  }
-
-  .media-viewer {
-    height: 90vh;
-    max-height: 90vh;
-    padding: 48px 8px 8px;
-    width: 96vw;
   }
 }
